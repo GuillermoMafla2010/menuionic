@@ -8,45 +8,216 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'usuarios',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+              import('../componentes/usuarios/usuarios.module').then(m => m.UsuariosPageModule)
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'ingresos',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+              import('../componentes/ingresos/ingresos.module').then(m => m.IngresosPageModule)
           }
         ]
       },
       {
-        path: 'tab3',
+        path: 'gastos',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../componentes/gastos/gastos.module').then(m => m.GastosPageModule)
           }
         ]
       },
+
+      {
+        path: 'ahorros',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ahorros/ahorros/ahorros.module').then(m => m.AhorrosPageModule)
+          }
+        ]
+      },
+
+      {
+        path: 'deudas',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/deudas/deudas.module').then(m => m.DeudasPageModule)
+          }
+        ]
+      },
+
+      {
+        path: 'opcionesahorros/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ahorros/ahorros-opciones/ahorros-opciones.module').then(m => m.AhorrosOpcionesPageModule)
+          }
+        ]
+      },
+
+      {
+        path: 'ahorrosingresos/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ahorros/ahorros-veringresos/ahorros-veringresos.module').then(m=>m.AhorrosVeringresosPageModule)
+          }
+        ]
+      },
+
+      {
+        path: 'ahorrosgastos/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ahorros/ahorros-vergastos/ahorros-vergastos.module').then(m=>m.AhorrosVergastosPageModule)
+          }
+        ]
+      },
+
+      
+      {
+        path: 'crearahorroingreso/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ahorros/ahorros-crear/ahorros-crear.module').then(m=>m.AhorrosCrearPageModule)
+          }
+        ]
+      },
+
+      {
+        path: 'crearahorrogasto/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ahorros/ahorros-creargasto/ahorros-creargasto.module').then(m=>m.AhorrosCreargastoPageModule)
+          }
+        ]
+      },
+      
+      {
+        path: 'crear-gastos',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/gastos/crear-gastos/crear-gastos.module').then(m => m.CrearGastosPageModule)
+          }
+        ]
+      },
+      {
+        path: 'crear-ingresos',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ingresos/crear-ingresos/crear-ingresos.module').then(m => m.CrearIngresosPageModule)
+          }
+        ]
+      },
+      {
+        path: 'crear-deuda',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/deudas/crear-deuda/crear-deuda.module').then(m => m.CrearDeudaPageModule)
+          }
+        ]
+      },
+      {
+        path: 'ver-ingresos',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ingresos/ver-ingresos/ver-ingresos.module').then(m => m.VerIngresosPageModule)
+          }
+        ]
+      },
+      {
+        path: 'editar-ingresos/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ingresos/editar-ingreso/editar-ingreso.module').then(m => m.EditarIngresoPageModule)
+          }
+        ]
+      },
+      {
+        path: 'editar-gastos/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/gastos/editar-gastos/editar-gastos.module').then(m => m.EditarGastosPageModule)
+          }
+        ]
+      },
+      {
+        path: 'ver-gastos',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/gastos/ver-gastos/ver-gastos.module').then(m => m.VerGastosPageModule)
+          }
+        ]
+      },
+      {
+        path: 'ver-gastos-fecha',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/gastos/ver-gastos-fecha/ver-gastos-fecha.module').then(m => m.VerGastosFechaPageModule)
+          }
+        ]
+      },
+      {
+        path: 'ver-ingresos-fecha',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../componentes/ingresos/ver-ingresos-fecha/ver-ingresos-fecha.module').then(m => m.VerIngresosFechaPageModule)
+          }
+        ]
+      },
+
+      
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/usuarios',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/usuarios',
     pathMatch: 'full'
   }
 ];

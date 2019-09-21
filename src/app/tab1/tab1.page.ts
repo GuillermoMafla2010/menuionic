@@ -10,7 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 export class Tab1Page {
 
   constructor(private statusbar: StatusBar) {
-    this.statusbar.backgroundColorByHexString('#fffffff');
+    this.statusbar.backgroundColorByHexString('#f4f4f4');
   }
 
 }
